@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .main{
+            margin-left: 530px;
+            margin-top: 30px;
+            padding-left: 10px;
+            padding-top: 40px;
+            height: 480px;
+            width: 300px;
+            border: solid;
+            border-color: rgb(213, 208, 208);
+            border-radius: 20px;
+        }
+        #res{
+            height: 95px;
+            width: 280px;
+            border: solid;
+            background-color: rgb(203, 198, 198);
+            text-align: right;
+            border-radius: 20px;
+            font-size: 40px;
+
+
+        }
+        .keys{
+            height: 50px;
+            width: 50px;
+            background-color: black;
+            display:inline;
+            color: white;
+            border-radius: 20px;
+            margin-top: 15px;
+            margin-left: 15px;
+        }
+
+
+        
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+       <input type="text" id="res">
+        <div class="btn">
+            
+            <input type="button" class="keys" value="C" onclick="Clear()">            
+            <input type="button" class="keys" value="%" onclick="Solve('%')">            
+            <input type="button" class="keys" value="&#129056" onclick="Back('<-')">            
+            <input type="button" class="keys" value="/" onclick="Solve('/')">      
+            <br>
+            <input type="button" class="keys" value="7" onclick="Solve('7')">            
+            <input type="button" class="keys" value="8" onclick="Solve('8')">            
+            <input type="button" class="keys" value="9" onclick="Solve('9')">            
+            <input type="button" class="keys" value="x" onclick="Solve('*')">            
+            <br>
+            <input type="button" class="keys" value="4" onclick="Solve('4')">            
+            <input type="button" class="keys" value="5" onclick="Solve('5')">            
+            <input type="button" class="keys" value="6" onclick="Solve('6')">            
+            <input type="button" class="keys" value="-" onclick="Solve('-')">            
+            <br>
+            <input type="button" class="keys" value="1" onclick="Solve('1')">            
+            <input type="button" class="keys" value="2" onclick="Solve('2')">            
+            <input type="button" class="keys" value="3" onclick="Solve('3')">            
+            <input type="button" class="keys" value="+" onclick="Solve('+')">            
+            <br> 
+            <input type="button" class="keys" value="00" onclick="Solve('00')">            
+            <input type="button" class="keys" value="0" onclick="Solve('0')">            
+            <input type="button" class="keys" value="." onclick="Solve('.')">            
+            <input type="button" class="keys" value="=" onclick="Result('=')">            
+ 
+        </div>
+    </div>
+
+    <script>
+        /* To display values */
+
+        function Solve(val){
+            let v = document.getElementById('res').value += val     
+        }
+        function Result(){
+            let exp1 = document.getElementById('res').value
+            let num = eval(exp1)
+            document.getElementById('res').value = num
+        }
+        function Back(){
+            let ev = document.getElementById('res').value
+            ev1 = ev.slice(0,-1)
+            document.getElementById('res').value = ev1
+        }
+        function Clear(){
+            document.getElementById('res').value = ''
+        }
+
+
+    </script>
+</body>
+</html>
